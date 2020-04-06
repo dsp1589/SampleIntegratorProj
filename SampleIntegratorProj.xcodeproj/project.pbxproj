@@ -13,7 +13,23 @@
 		BA9F3377243B8EF3003599BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA9F3375243B8EF3003599BB /* Main.storyboard */; };
 		BA9F3379243B8EF5003599BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA9F3378243B8EF5003599BB /* Assets.xcassets */; };
 		BA9F337C243B8EF5003599BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA9F337A243B8EF5003599BB /* LaunchScreen.storyboard */; };
+		BA9F3386243B94B5003599BB /* MyStaticLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9F3384243B8F8D003599BB /* MyStaticLibrary.framework */; };
+		BA9F3387243B94B5003599BB /* MyStaticLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA9F3384243B8F8D003599BB /* MyStaticLibrary.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BA9F3388243B94B5003599BB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BA9F3387243B94B5003599BB /* MyStaticLibrary.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		BA9F336C243B8EF3003599BB /* SampleIntegratorProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleIntegratorProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +40,7 @@
 		BA9F3378243B8EF5003599BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA9F337B243B8EF5003599BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA9F337D243B8EF5003599BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA9F3384243B8F8D003599BB /* MyStaticLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyStaticLibrary.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA9F3386243B94B5003599BB /* MyStaticLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +58,7 @@
 		BA9F3363243B8EF3003599BB = {
 			isa = PBXGroup;
 			children = (
+				BA9F3383243B8EFE003599BB /* Lib */,
 				BA9F336E243B8EF3003599BB /* SampleIntegratorProj */,
 				BA9F336D243B8EF3003599BB /* Products */,
 			);
@@ -67,6 +86,14 @@
 			path = SampleIntegratorProj;
 			sourceTree = "<group>";
 		};
+		BA9F3383243B8EFE003599BB /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				BA9F3384243B8F8D003599BB /* MyStaticLibrary.framework */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,6 +104,7 @@
 				BA9F3368243B8EF3003599BB /* Sources */,
 				BA9F3369243B8EF3003599BB /* Frameworks */,
 				BA9F336A243B8EF3003599BB /* Resources */,
+				BA9F3388243B94B5003599BB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -286,6 +314,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49N3E55H55;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Lib",
+				);
 				INFOPLIST_FILE = SampleIntegratorProj/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -304,6 +336,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49N3E55H55;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Lib",
+				);
 				INFOPLIST_FILE = SampleIntegratorProj/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

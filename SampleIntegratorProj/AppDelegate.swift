@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MyStaticLibrary
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,6 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let e = Encryptor()
+        let encrypted = e.encryptedString("Hello World")
+        print(encrypted)
+        let d = Decryptor()
+        let decrypted = d.decryptedString(encrypted)
+        print(decrypted)
         return true
     }
 
